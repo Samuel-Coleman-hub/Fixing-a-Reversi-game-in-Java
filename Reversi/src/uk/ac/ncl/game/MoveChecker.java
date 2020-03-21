@@ -109,7 +109,7 @@ public class MoveChecker {
             for (int column = 0; column < BOARD_SIZE; column++) {
                 if (this.cells[column][row].getValue() == CellStatus.LIGHT){
                     lights++;
-                } else if this.cells[row][column].getValue() == CellStatus.DARK{
+                } else if (this.cells[row][column].getValue() == CellStatus.DARK){
                     darks++;
                 }
             }
