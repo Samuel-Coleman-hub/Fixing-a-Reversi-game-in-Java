@@ -9,6 +9,7 @@ import uk.ac.ncl.entity.CellStatus;
 import uk.ac.ncl.entity.DirectedMove;
 import uk.ac.ncl.entity.Cell;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static uk.ac.ncl.Constants.*;
@@ -23,7 +24,7 @@ public class MoveChecker {
     private Cell[][] cells;
 
     public MoveChecker(Cell[][] cells) {
-
+        this.cells = cells;
     }
 
     /**
