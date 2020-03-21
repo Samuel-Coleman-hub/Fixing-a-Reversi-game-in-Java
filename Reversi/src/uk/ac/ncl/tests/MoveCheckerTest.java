@@ -2,7 +2,7 @@ package uk.ac.ncl.tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import uk.ac.ncl.entity.Cell
+import uk.ac.ncl.entity.Cell;
 import uk.ac.ncl.entity.CellStatus;
 import uk.ac.ncl.game.MoveChecker;
 
