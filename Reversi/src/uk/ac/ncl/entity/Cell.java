@@ -131,11 +131,14 @@ public class Cell {
                     temp_score += 1;
                     if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
                             && cells[d_row][d_col].getValue() != CellStatus.EMPTY){
-                        if (cells[d_row][d_col].getValue() == colour) {
+                        System.out.println(cells[d_row][d_col].getValue());
+                        if (cells[d_row][d_col].getValue() != colour) {
                             isLegal = true;
                             score += temp_score;
                             moves.add(new DirectedMove(cells[d_row][d_col], dir));
+
                         }
+
                     }
                     else {
                         break;
