@@ -136,7 +136,7 @@ public class Cell {
                             isLegal = true;
                             score += temp_score;
                             moves.add(new DirectedMove(cells[d_row][d_col], dir));
-
+                            break;
                         }
 
                     }
