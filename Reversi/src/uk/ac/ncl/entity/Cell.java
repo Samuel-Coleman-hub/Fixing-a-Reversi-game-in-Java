@@ -113,6 +113,7 @@ public class Cell {
      */
     public boolean isLegal(CellStatus colour, Cell[][] cells){
         CellStatus opponent = colour == CellStatus.LIGHT ? CellStatus.DARK : CellStatus.LIGHT;
+        System.out.println(opponent);
         boolean isLegal = false;
         int score = 0;
         ArrayList<DirectedMove> moves = new ArrayList<DirectedMove>();
@@ -121,21 +122,22 @@ public class Cell {
         for (int[] dir : DIRS){
             int temp_score = 0;
             int d_row = this.getRow() + dir[0];
-            //System.out.println("this is row " + this.getRow() + "this is dir: " + dir[0] + " This is row+dir: " + (this.getRow()+dir[0]));
+            System.out.println(Integer.toString(d_row) + " = row dir");
             int d_col = this.getColumn() + dir[1];
-            //System.out.println("this is column " + this.getColumn() + "this is dir: " + dir[0] + " This is column+dir: " + (this.getColumn()+dir[0]));
+            System.out.println(Integer.toString(d_col) + " = column dir");
             if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row && d_row < BOARD_SIZE
                     && cells[d_row][d_col].getValue() != CellStatus.EMPTY
                     && cells[d_row][d_col].getValue() == opponent) {
                 while (true){
                     d_row += dir[0];
-                    d_col += dir[0];
+                    d_col += dir[1];
                     temp_score += 1;
                     if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row //Changed this to less than rather than less than
                             //or equal to
                             && cells[d_row][d_col].getValue() != CellStatus.EMPTY){
                         if (cells[d_row][d_col].getValue() == colour) { //Meant to be == I have broken it to work
                             isLegal = true;
+                            System.out.println(cells[d_row][d_col]);
                             score += temp_score;
                             moves.add(new DirectedMove(cells[d_row][d_col], dir));
                             break;
