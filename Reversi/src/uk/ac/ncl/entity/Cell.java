@@ -89,7 +89,7 @@ public class Cell {
     }
 
     public int getRow() {
-        return column;
+        return row;
     }
 
     public int getColumn() {
@@ -121,7 +121,9 @@ public class Cell {
         for (int[] dir : DIRS){
             int temp_score = 0;
             int d_row = this.getRow() + dir[0];
+            //System.out.println("this is row " + this.getRow() + "this is dir: " + dir[0] + " This is row+dir: " + (this.getRow()+dir[0]));
             int d_col = this.getColumn() + dir[1];
+            //System.out.println("this is column " + this.getColumn() + "this is dir: " + dir[0] + " This is column+dir: " + (this.getColumn()+dir[0]));
             if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row && d_row < BOARD_SIZE
                     && cells[d_row][d_col].getValue() != CellStatus.EMPTY
                     && cells[d_row][d_col].getValue() == opponent) {
@@ -129,10 +131,10 @@ public class Cell {
                     d_row += dir[0];
                     d_col += dir[0];
                     temp_score += 1;
-                    if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row
+                    if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row //Changed this to less than rather than less than
+                            //or equal to
                             && cells[d_row][d_col].getValue() != CellStatus.EMPTY){
-                        System.out.println(cells[d_row][d_col].getValue());
-                        if (cells[d_row][d_col].getValue() != colour) {
+                        if (cells[d_row][d_col].getValue() == colour) { //Meant to be == I have broken it to work
                             isLegal = true;
                             score += temp_score;
                             moves.add(new DirectedMove(cells[d_row][d_col], dir));
