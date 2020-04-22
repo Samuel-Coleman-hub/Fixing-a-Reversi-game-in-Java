@@ -152,6 +152,7 @@ public class Cell {
         }
 
         Move move = new Move(moves, score);
+        System.out.println(move.getMoves());
         this.setMove(move);
         return isLegal;
     }
