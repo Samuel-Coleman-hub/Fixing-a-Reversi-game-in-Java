@@ -11,6 +11,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import static uk.ac.ncl.Constants.BOARD_SIZE;
+import static uk.ac.ncl.Constants.PLAYERS_CELL_STATUS;
 
 /**
  * Represents each cell of the playing board.
@@ -56,6 +57,13 @@ public class Cell {
      */
     public void colourTemp(Color colour, boolean isPressed){
         this.jButton.setBackground(colour);
+
+        if(colour == Color.BLACK){
+            this.setValue(CellStatus.DARK);
+        }else if(colour == Color.WHITE){
+            this.setValue(CellStatus.LIGHT);
+        }
+
         if (isPressed) {
             this.jButton.setBorderPainted(true);
             this.jButton.setBorder(new LineBorder(Color.RED));

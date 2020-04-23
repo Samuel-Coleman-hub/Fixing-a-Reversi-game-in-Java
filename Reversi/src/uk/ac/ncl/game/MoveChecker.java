@@ -56,12 +56,10 @@ public class MoveChecker {
         cell.colourTemp(colour == OPPONENTS_CELL_STATUS ? OPPONENTS_COLOUR : PLAYERS_COLOUR, false);
         for (DirectedMove move : cell.getMove().getMoves()) {
 
-            System.out.println("Destination cell: " + move.getCell().getRow() + "  " + move.getCell().getColumn());
-
             int[] dir = move.getDirection();
             int d_row = cell.getRow();
             int d_col = cell.getColumn();
-            System.out.println("Selected Cell " + d_row + " " + d_col);
+
             while(d_col != move.getCell().getColumn() || d_row != move.getCell().getRow()) {
                 d_row += dir[0];
                 d_col += dir[1];
