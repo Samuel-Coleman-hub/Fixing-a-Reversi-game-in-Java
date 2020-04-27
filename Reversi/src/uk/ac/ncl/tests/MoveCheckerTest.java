@@ -93,7 +93,7 @@ class MoveCheckerTest {
 
     @Test
     void getFinalScore() {
-        String result = "The game is over. It is a draw. Each player has " + 2;
+        String result = "The game is over. It is a draw. Each player has " + 2 + " pieces";
         assertTrue(result.equals(moveChecker.getFinalScore()));
     }
 
