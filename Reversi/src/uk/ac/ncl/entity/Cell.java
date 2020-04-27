@@ -130,9 +130,9 @@ public class Cell {
         for (int[] dir : DIRS){
             int temp_score = 0;
             int d_row = this.getRow() + dir[0];
-            System.out.println(Integer.toString(d_row) + " = row dir");
+            //System.out.println(Integer.toString(d_row) + " = row dir");
             int d_col = this.getColumn() + dir[1];
-            System.out.println(Integer.toString(d_col) + " = column dir");
+            //System.out.println(Integer.toString(d_col) + " = column dir");
             if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row && d_row < BOARD_SIZE
                     && cells[d_row][d_col].getValue() != CellStatus.EMPTY
                     && cells[d_row][d_col].getValue() == opponent) {
@@ -140,8 +140,7 @@ public class Cell {
                     d_row += dir[0];
                     d_col += dir[1];
                     temp_score += 1;
-                    if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <=  d_row //Changed this to less than rather than less than
-                            //or equal to
+                    if (0 <= d_col &&  d_col < BOARD_SIZE && 0 <= d_row && d_row < BOARD_SIZE
                             && cells[d_row][d_col].getValue() != CellStatus.EMPTY){
                         if (cells[d_row][d_col].getValue() == colour) { //Meant to be == I have broken it to work
                             isLegal = true;
