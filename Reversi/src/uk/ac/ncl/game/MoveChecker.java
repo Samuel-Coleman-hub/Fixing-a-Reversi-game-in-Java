@@ -63,7 +63,8 @@ public class MoveChecker {
             while(d_col != move.getCell().getColumn() || d_row != move.getCell().getRow()) {
                 d_row += dir[0];
                 d_col += dir[1];
-                cells[d_row][d_col].colourTemp(PLAYERS_COLOUR, false);
+                cells[d_row][d_col].colourTemp(colour == OPPONENTS_CELL_STATUS ? OPPONENTS_COLOUR : PLAYERS_COLOUR,
+                        false);
             }
 
         }
