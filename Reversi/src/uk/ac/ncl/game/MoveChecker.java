@@ -80,15 +80,9 @@ public class MoveChecker {
         ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
-                System.out.println("Cells looped through");
-                System.out.println(this.cells[i][j].getRow() + " "+ this.cells[i][j].getColumn());
                 if (this.cells[i][j].getValue() == CellStatus.EMPTY){
-                    //System.out.println("CellStatus == empty: ");
-                    //System.out.println(this.cells[i][j].getRow() + " "+ this.cells[i][j].getColumn());
                     if (this.cells[i][j].isLegal(colour, this.cells)){ //add this.cells?
                         potentialMoves.add(this.cells[i][j]);
-                        //System.out.println("Potential Move: ");
-                        //System.out.println(this.cells[i][j].getRow() + " "+ this.cells[i][j].getColumn());
                     }
                 }
             }
